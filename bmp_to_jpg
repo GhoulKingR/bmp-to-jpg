@@ -1,0 +1,9 @@
+#!/bin/bash
+
+directory="$(pwd)"
+
+for file in "$directory"/*.bmp; do
+  if [ -f "$file" ]; then
+    convert -quality 90 "$file" "${file%.bmp}.jpg"
+  fi
+done
